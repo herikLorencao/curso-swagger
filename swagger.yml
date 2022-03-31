@@ -14,3 +14,114 @@ info:
 externalDocs:
   description: Saiba mais acessando esse link
   url: https://mockapi.io
+servers:
+- url: https://example.api.com.br
+  description: API de Teste
+- url: https://example.api.com.br
+  description: API de Produção
+paths:
+  /especialidades:
+    get:
+      summary: Recupera todas as especialidades
+      responses:
+        200:
+          description: Recupera todas as especialidades
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    descricao:
+                      type: string
+    post:
+      summary: Insere uma especialidade
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                descricao:
+                  type: string
+      responses:
+        201:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  descricao:
+                    type: string
+  /especialidades/{id}:
+    parameters:
+    - name: id
+      in: path
+      schema:
+        type: integer
+      required: true
+    get:
+      summary: Recupera uma especialidade por ID
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  descricao:
+                    type: string
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: Not Found
+    put:
+      summary: Edita uma especialidade por ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                descricao:
+                  type: string
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  descricao:
+                    type: string
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: Not Found
+    delete:
+      summary: Remove uma especialidade por ID
+      responses:
+        204:
+          description: sucesso
+          content:
+            application/text:
+              example: ""
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: Not Found
