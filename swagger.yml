@@ -24,6 +24,7 @@ security:
 paths:
   /especialidades:
     get:
+      tags: ["Especialidades"]
       summary: Recupera todas as especialidades
       responses:
         200:
@@ -33,6 +34,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/Especialidades"
     post:
+      tags: ["Especialidades"]
       summary: Insere uma especialidade
       requestBody:
         content:
@@ -57,6 +59,7 @@ paths:
         type: integer
       required: true
     get:
+      tags: ["Especialidades"]
       summary: Recupera uma especialidade por ID
       responses:
         200:
@@ -71,6 +74,7 @@ paths:
             application/json:
               example: Not Found
     put:
+      tags: ["Especialidades"]
       summary: Edita uma especialidade por ID
       requestBody:
         content:
@@ -93,6 +97,7 @@ paths:
             application/json:
               example: Not Found
     delete:
+      tags: ["Especialidades"]
       summary: Remove uma especialidade por ID
       responses:
         204:
@@ -122,3 +127,4 @@ components:
     auth:
       type: http
       scheme: bearer
+      bearerFormat: JWT
