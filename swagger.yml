@@ -29,14 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    descricao:
-                      type: string
+                $ref: "#/components/schemas/Especialidades"
     post:
       summary: Insere uma especialidade
       requestBody:
@@ -53,12 +46,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  descricao:
-                    type: string
+                $ref: "#/components/schemas/Especialidade"
   /especialidades/{id}:
     parameters:
     - name: id
@@ -74,12 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  descricao:
-                    type: string
+                $ref: "#/components/schemas/Especialidade"
         404:
           description: Especialidade não encontrada
           content:
@@ -101,12 +84,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  descricao:
-                    type: string
+                $ref: "#/components/schemas/Especialidade"
         404:
           description: Especialidade não encontrada
           content:
@@ -125,3 +103,16 @@ paths:
           content:
             application/json:
               example: Not Found
+components:
+  schemas:
+    Especialidade:
+      type: object
+      properties:
+        id:
+          type: integer
+        descricao:
+          type: string
+    Especialidades:
+      type: array
+      items:
+        $ref: "#/components/schemas/Especialidade"
