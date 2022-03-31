@@ -3,3 +3,14 @@ info:
   title: API de consultório
   description: API para controlar médicos e suas especialidades dentro do consultório
   version: 0.0.1
+  termsOfService: https://mockapi.io
+  contact:
+    name: Suporte a Devs
+    email: email@mail.com
+    url: https://mockapi.io
+  license:
+    name: Licença GPLv3
+    url: https://www.gnu.org/licenses/gpl-3.0.en.html
+externalDocs:
+  description: Saiba mais acessando esse link
+  url: https://mockapi.io
