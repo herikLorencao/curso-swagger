@@ -19,6 +19,8 @@ servers:
   description: API de Teste
 - url: https://example.api.com.br
   description: API de Produção
+security: 
+  - auth: []
 paths:
   /especialidades:
     get:
@@ -116,3 +118,7 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Especialidade"
+  securitySchemes:
+    auth:
+      type: http
+      scheme: bearer
